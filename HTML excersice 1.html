@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html page</title>
+</head>
+<body>
+    <h1>Welcome to My HTML Page</h1>
+    <p>Hello.</p>
+<button onclick="countClicks()">Click</button>
+<p id="clickCount">Clicks: 0</p>
+<script>
+    let count = 0;
+    function countClicks() {
+        count++;
+        document.getElementById('clickCount').textContent = 'Clicks: ' + count;
+    }
+</script>
+</body>
+</html>
