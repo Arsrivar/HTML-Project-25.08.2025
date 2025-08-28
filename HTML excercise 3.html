@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number Clicker</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #number { font-size: 2em; margin: 20px; }
+        button { padding: 10px 20px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Random Number Clicker</h1>
+    <div id="number">Click the button!</div>
+    <button onclick="generateRandomNumber()">Generate Random Number</button>
+
+    <script>
+        function generateRandomNumber() {
+            const randomNum = Math.floor(Math.random() * 100) + 1; // 1 to 100
+            document.getElementById('number').textContent = randomNum;
+        }
+    </script>
+</body>
+</html>
