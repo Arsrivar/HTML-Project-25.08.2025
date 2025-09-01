@@ -22,28 +22,95 @@
 					border-radius: 8px;
 					width:200px;
 				}
+				.h1 {
+
+					font-size: 25px;
+					font-weight: bold;
+				}
+			</style>
+			<style>
+				.box {
+					background-color: pink;
+					padding: 10px;
+					border-radius: 8px;
+					margin-top: 20px;
+				}
+				.box2 {
+					background-color: lightpink;
+					padding: 10px;
+					border-radius: 8px;
+					width:200px;
+				}
+				.h1 {
+
+					font-size: 25px;
+					font-weight: bold;
+				}
 			</style>
 			<div class="box">
-				<h1>Pikachu <span class="specie">(Pokémon)</span></h1><!-- Header 1-->
+				<h1 class="h1">Pikachu <span class="specie">(Pokémon)</span></h1><!-- Header 1-->
 			</div>
 		</div>
+		&nbsp
+		<style>
+			.box4 {
+				background-color: lightpink;
+				padding: 10px;
+				border-radius: 8px;
+				width:500px
+			}
+		</style>
 		<div class="box2">
-			<em>Electric-type Pokémon</em>
+			<style>
+				.subtitle {
+					font-style: italic;
+					color: rgb(155, 81, 92);
+				}
+				.subsubtitle {
+					font-weight: bold;
+					font-size: large;
 
+					
+				}
+			</style>
+			
+			<p>
+				<span class="subtitle">Electric-type Pokémon</span>
+
+			</p>
 		</div>
+		&nbsp
 			<a href="https://en.wikipedia.org/wiki/Pikachu" target="_blank">
 				<img src="https://en.wikipedia.org/wiki/File:Pok%C3%A9mon_Pikachu_art.png"
 					id="pika1"
 					alt="Cickable Smilling Pikachu"
 				title="Click me to go to wikipédia"
 				/></a>
-		<h2>Evolution</h2><!-- Header 2-->
+				
+		<div>
+				&nbsp;
+
+		</div>
+		<div class="subsubtitle">
+		<div class="box4">Evolution</div>
+		</div>
 		<p>
 			Pikachu evolves from Pichu and evolves into Raichu.
 			<br/>
 			In the Alola region, it can evolve into Alolan Raichu when exposed to a Thunder Stone.
 		</p>
-		<h2>Forms</h2>
+		<style>
+			.h2 {
+				background-color: lightyellow !important;
+				border: 2px solid yellow !important;
+				padding: 10px !important;
+				margin: 10px !important;
+			}
+		</style>
+		<div class="subsubtitle">
+			<div class="box4">Forms</div>
+		</div>
+
 		<p>Pikachu has <strong>4 forms</strong></p><!-- Paragraph-->
 		<ul class="evolution"><!-- UnorderList-->
 			<style>
@@ -69,12 +136,22 @@
 			</div>
 
 		</ul>
-		<div class="box">
-			<h2>Pokédex entries</h2>
-			<img src="PICTURES/yellow/pikachu.jpg"
-				id="pika2"
-				/></a>
-			<table border="1"><!-- Table main tag-->
+		<div>
+			<div class="box4">
+				<div class="subsubtitle entries">Pokédex entries</div>
+
+			</div>
+			&nbsp;
+			<style>
+				table {
+					border-collapse: collapse;
+					width: 100%;
+				}
+				table, th, td {
+					border: 2px solid lightpink;
+				}
+			</style>
+			<table><!-- Table main tag-->
 
 				<tr style="color:blue;"><!-- Table Row-->
 					<td>Episode</td><!-- Table Header-->
