@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Pikachu's portfolio</title>
-		<link rel="icon" type="image/jpg" href="PICTURES/yellow/pikachu.jpg">
-		<link rel="stylesheet" href="css/my_style2.css">
+	
+
+		
 		</head>
 
 	<body>
 		<!-- Commented = the browser will not see it (this is HTML comments) -->
-		<h1>Pikachu <span class="specie">(Pokémon)</span></h1><!-- Header 1-->
-		<em>Electric-type Pokémon</em>
-		<a href="https://en.wikipedia.org/wiki/Pikachu" target="_blank">
-			<img src="PICTURES/yellow/pikachu.jpg"
-				id="pika1"
-				alt="Cickable Smilling Pikachu"
+		<div>
+			<style>
+				.box {
+					background-color: pink;
+					padding: 10px;
+					border-radius: 8px;
+
+				}
+				.box2 {
+					background-color: lightpink;
+					padding: 10px;
+					border-radius: 8px;
+					width:200px;
+				}
+			</style>
+			<div class="box">
+				<h1>Pikachu <span class="specie">(Pokémon)</span></h1><!-- Header 1-->
+			</div>
+		</div>
+		<div class="box2">
+			<em>Electric-type Pokémon</em>
+
+		</div>
+			<a href="https://en.wikipedia.org/wiki/Pikachu" target="_blank">
+				<img src="https://en.wikipedia.org/wiki/File:Pok%C3%A9mon_Pikachu_art.png"
+					id="pika1"
+					alt="Cickable Smilling Pikachu"
 				title="Click me to go to wikipédia"
 				/></a>
 		<h2>Evolution</h2><!-- Header 2-->
 		<p>
-			Pikachu evolves from <span class="evolution" title="first evolution">Pichu</span> and evolves into <span class="evolution" title="evolution 2">Raichu</span>.
+			Pikachu evolves from Pichu and evolves into Raichu.
 			<br/>
-			In Alola, it evolves into <span class="evolution" title="evolution 3">Alolan Raichu</span>.
+			In the Alola region, it can evolve into Alolan Raichu when exposed to a Thunder Stone.
 		</p>
 		<h2>Forms</h2>
 		<p>Pikachu has <strong>4 forms</strong></p><!-- Paragraph-->
 		<ul class="evolution"><!-- UnorderList-->
+			<style>
+				.box {
+					border: 1px solid yellow !important;
+					padding: 10px !important;
+					margin: 10px !important;
+				}
+			</style>
 			<li>Cosplay Pikachu</li><!--List Item-->
 			<li>Pikachu in a cap</li>
 			<li>Partner Pikachu</li>
@@ -38,17 +66,17 @@
 			</li>
 
 		</ul>
-		<div>
+		<div class="box">
 			<h2>Pokédex entries</h2>
 			<img src="PICTURES/yellow/pikachu.jpg"
 				id="pika2"
 				/></a>
-			<table><!-- Table main tag-->
+			<table border="1"><!-- Table main tag-->
 
 				<tr style="color:blue;"><!-- Table Row-->
-					<th>Episode</th><!-- Table Header-->
-					<th>Source</th>
-					<th>Entry</th>
+					<td>Episode</td><!-- Table Header-->
+					<td>Source</td>
+					<td>Entry</td>
 				</tr>
 				<tr>
 					<td>DP002</td><!-- Table Data (cell)-->
