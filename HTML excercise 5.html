@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	
+	<style>
+				.box3 {
+					border: 1px invisible,invisible,solid black !important;
+					margin-top: 10px;
+					width: 800px;
+					background-color: yellow !important;
+					border-right: 2px solid black;
+					border-bottom: 2px solid black;
+			</style>
 
 		
 		</head>
 
-	<body>
+	<body style="margin: 100px; font-family: Arial, sans-serif;">
 		<!-- Commented = the browser will not see it (this is HTML comments) -->
 		<div>
 			<style>
@@ -79,70 +87,65 @@
 
 			</p>
 		</div>
-		&nbsp
-			<a href="https://en.wikipedia.org/wiki/Pikachu" target="_blank">
-				<img src="https://en.wikipedia.org/wiki/File:Pok%C3%A9mon_Pikachu_art.png"
-					id="pika1"
-					alt="Cickable Smilling Pikachu"
-				title="Click me to go to wikipédia"
-				/></a>
-				
-		<div>
-				&nbsp;
+		&nbsp;
 
+		<img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png" align="right" style="margin: 20px; border: 5px solid red; background-color: white;"/><!-- Image-->
+
+			&nbsp;
 		</div>
 		<div class="subsubtitle">
 		<div class="box4">Evolution</div>
+		&nbsp;
 		</div>
 		<p>
 			Pikachu evolves from Pichu and evolves into Raichu.
 			<br/>
-			In the Alola region, it can evolve into Alolan Raichu when exposed to a Thunder Stone.
+			<br/>
+			In Alola, it evolves into Alolan Raichu.
 		</p>
+		&nbsp;
 		<style>
 			.h2 {
 				background-color: lightyellow !important;
 				border: 2px solid yellow !important;
 				padding: 10px !important;
 				margin: 10px !important;
-			}
+				width: 500px;
+				}
+				.box5 {
+					background-color: lightpink;
+				padding: 10px;
+				border-radius: 8px;
+				width:800px
+				}
+			
 		</style>
 		<div class="subsubtitle">
 			<div class="box4">Forms</div>
 		</div>
-
+		&nbsp;
 		<p>Pikachu has <strong>4 forms</strong></p><!-- Paragraph-->
-		<ul class="evolution"><!-- UnorderList-->
-			<style>
-				.box3 {
-					border: 1px solid yellow !important;
-					padding: 10px !important;
-					margin: 10px !important;
-					background-color: yellow !important;
-				}
-			</style>
-			<div class="box3">
-			<li>Cosplay Pikachu</li><!--List Item-->
-			<li>Pikachu in a cap</li>
-			<li>Partner Pikachu</li>
-			<li>Gigantamax Pikachu</li>
-			<li>... in other medias :
-				<!-- you can nest list (lists inside lists)-->
-				<ul>
-					<li>Surfing Pikachu</li>
-					<li>Flying Pikachu</li>
+		<ul class="box3"><!-- UnorderList-->
+					<li>Cosplay Pikachu</li><!--List Item-->
+					<li>Pikachu in a cap</li>
+					<li>Partner Pikachu</li>
+					<li>Gigantamax Pikachu</li>
+					<li>... in other medias :
+						<!-- you can nest list (lists inside lists)-->
+						<ul>
+							<li style="color:red">Surfing Pikachu</li>
+							<li style="color:red">Flying Pikachu</li>
+						</ul>
+					</li>
 				</ul>
-			</li>
-			</div>
-
-		</ul>
+		&nbsp;
 		<div>
-			<div class="box4">
+			<div class="box5">
 				<div class="subsubtitle entries">Pokédex entries</div>
 
 			</div>
 			&nbsp;
-			<style>
+			<style >
 				table {
 					border-collapse: collapse;
 					width: 100%;
@@ -150,10 +153,15 @@
 				table, th, td {
 					border: 2px solid lightpink;
 				}
+				table {
+					outline: 5px solid brown;
+					box-shadow: 5px 5px 5px 5px pink;
+					margin-right: 200px;	
+				}
 			</style>
 			<table><!-- Table main tag-->
 
-				<tr style="color:blue;"><!-- Table Row-->
+				<tr style="color:blue; text-align: center;"><!-- Table Row-->
 					<td>Episode</td><!-- Table Header-->
 					<td>Source</td>
 					<td>Entry</td>
