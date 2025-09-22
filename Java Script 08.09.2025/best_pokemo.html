@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Best Pokémon Poll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, Segoe UI, Roboto, sans-serif; }
+    body { margin: 2rem; }
+    fieldset { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    legend { font-weight: 600; padding: 0 .4rem; }
+    .row { display: grid; gap: .5rem; margin: .5rem 0; }
+    button { padding: .6rem 1rem; border-radius: 8px; border: 1px solid #888; cursor: pointer; }
+    label { display: inline-flex; align-items: center; gap: .4rem; }
+    input[type="text"] { padding: .5rem; border: 1px solid #bbb; border-radius: 6px; }
+    small { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Vote: Best Pokémon</h1>
+
+  <!-- Uses GET so the result page can read URL params -->
+  <form method="get" action="result.html">
+    <fieldset>
+      <legend>Pick your favorite</legend>
+      <div class="row">
+        <label><input type="radio" name="pokemon" value="Pikachu" required> Pikachu</label>
+        <label><input type="radio" name="pokemon" value="Charizard"> Charizard</label>
+        <label><input type="radio" name="pokemon" value="Gengar"> Gengar</label>
+        <label><input type="radio" name="pokemon" value="Greninja"> Greninja</label>
+        <label><input type="radio" name="pokemon" value="Mewtwo"> Mewtwo</label>
+      </div>
+      <small>Required. Yes, you must commit.</small>
+    </fieldset>
+
+    <fieldset>
+      <legend>Region (optional)</legend>
+      <select name="region">
+        <option value="">— Not telling —</option>
+        <option value="Kanto">Kanto</option>
+        <option value="Johto">Johto</option>
+        <option value="Hoenn">Hoenn</option>
+        <option value="Sinnoh">Sinnoh</option>
+        <option value="Unova">Unova</option>
+        <option value="Kalos">Kalos</option>
+        <option value="Alola">Alola</option>
+        <option value="Galar">Galar</option>
+        <option value="Paldea">Paldea</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your name (optional)</legend>
+      <input type="text" name="trainer" placeholder="Red, Blue, or chaotic neutral..." maxlength="40">
+    </fieldset>
+    <fieldset>
+        <legend>Are you over 18?</legend>
+        <label><input type="radio" name="age" value="yes" required> Yes</label>
+        <label><input type="radio" name="age" value="no"> No</label>
+    </fieldset>
+
+    <button type="submit">Submit vote</button>
+  </form>
+
+  <p><small>This will navigate to <code>result.html</code> with your choices in the URL. No backend, no drama.</small></p>
+</body>
+</html>

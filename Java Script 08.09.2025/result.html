@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Vote Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, Segoe UI, Roboto, sans-serif; }
+    body { margin: 2rem; }
+    .card { border: 1px solid #ccc; border-radius: 10px; padding: 1rem; max-width: 640px; }
+    .tag { display: inline-block; padding: .2rem .6rem; border: 1px solid #aaa; border-radius: 999px; margin-right: .4rem; }
+    .row { margin: .3rem 0; }
+    button { padding: .6rem 1rem; border-radius: 8px; border: 1px solid #888; cursor: pointer; }
+    .actions { display: flex; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .warn { color: #a33; }
+    code { background: #f6f6f6; padding: .1rem .3rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Your Vote</h1>
+  <div id="out" class="card" role="region" aria-live="polite"></div>
+
+  <div class="actions">
+    <button id="copyUrl" type="button">Copy shareable link</button>
+    <a href="best-pokemon.html"><button type="button">Go back</button></a>
+  </div>
+
+  <script>
+    // Accept only known Pokémon from the form to keep things sane
+    const ALLOWED_POKEMON = new Set(["Pikachu", "Charizard", "Gengar", "Greninja", "Mewtwo"]);
+    const params = new URLSearchParams(location.search);
+
+    const pokemon = params.get("pokemon") || "";
+    const region = params.get("region") || "";
+    const trainer = params.get("trainer") || "";
+
+    const out = document.getElementById("out");
+
+    function esc(text) {
+      // Use textContent elsewhere, but this helps if we ever need string interpolation.
+      const d = document.createElement("div");
+      d.textContent = text;
+      return d.innerHTML;
+    }
+
+    const issues = [];
+
+    if (!pokemon) {
+      issues.push("Missing required field: pokemon.");
+    } else if (!ALLOWED_POKEMON.has(pokemon)) {
+      issues.push(`Unknown pokemon value: ${pokemon}.`);
+    }
+
+    const header = document.createElement("h2");
+    header.textContent = "Result";
+    out.appendChild(header);
+
+    if (issues.length) {
+      const p = document.createElement("p");
+      p.className = "warn";
+      p.innerHTML = "There was a problem with your submission:<br>" + issues.map(esc).join("<br>");
+      out.appendChild(p);
+
+      const hint = document.createElement("p");
+      hint.innerHTML = `Use the <a href="best-pokemon.html">form</a> instead of editing the URL like a gremlin.`;
+      out.appendChild(hint);
+    } else {
+      const row1 = document.createElement("div");
+      row1.className = "row";
+      row1.innerHTML = `<strong>Best Pokémon:</strong> <span class="tag">${esc(pokemon)}</span>`;
+      out.appendChild(row1);
+
+      const row2 = document.createElement("div");
+      row2.className = "row";
+      row2.innerHTML = `<strong>Region:</strong> ${region ? `<span class="tag">${esc(region)}</span>` : "<em>unspecified</em>"}`;
+      out.appendChild(row2);
+
+      const row3 = document.createElement("div");
+      row3.className = "row";
+      row3.innerHTML = `<strong>Trainer:</strong> ${trainer ? esc(trainer) : "<em>anonymous</em>"}`;
+      out.appendChild(row3);
+    }
+
+    // Copy shareable link
+    document.getElementById("copyUrl").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        alert("Link copied to clipboard.");
+      } catch {
+        alert("Clipboard failed. Just select the address bar like it’s 2009.");
+      }
+    });
+  </script>
+</body>
+</html>
