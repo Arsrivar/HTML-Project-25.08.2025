@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="best_pokemon.js">
+        console.log(window.location);
+        const params = new URLSearchParams(window.location.search);
+        const vote=params.get('choice');
+        const vote2=params.get('choice2');
+        let myClass = "";
+        let myClass2 = "";
+        switch(vote) {
+            case 'bulbasaur':
+                myClass = "green";break;
+            case'Pikachu':
+                myClass = "yellow";break;
+                default:myClass="blue";
+        }
+        if (vote2=="Squirtle") {
+            myClass2 = "blue";
+        } else if (vote2=="Charmander") {
+            myClass2 = "red";
+        } else {
+            myClass2 = "green";
+        }
+        this.onload=() => {
+            const paragraph=document.querySelector("#result");
+            paragraph.innerHTML=`<span>${username $}</span> voted for <span class="${myClass}">${vote}</span> and <span class="${myClass2}">${vote2}</span>`;
+            const voteSpan=document.querySelector("#vote");
+            voteSpan.style.color=myClass;
+    </head>
+    <body>
+        
+    </body>
+</html>
